@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import { SafeAreaView, View } from 'react-native';
 import AuthRoutes from './authRoutes';
+import AppRoutes from './appRoutes';
 
 const Routes = () => {
-    const [signed] = useState(false);
-    // const [loading] = useState(false)
+    const [signed] = useState(true);
     return (
-        signed ? <View></View> : <AuthRoutes />
+        signed ? <AppRoutes/> : <AuthRoutes />
     )
 }
 
