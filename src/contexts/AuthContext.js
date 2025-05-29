@@ -9,6 +9,7 @@ const AuthContext = createContext({});
 export const AuthProvider = ({ children }) => {
     const navigation = useNavigation();
     const [loading, setLoading] = useState(false);
+    const [user, setUser] = useState(null)
 
     const signup = async (name, email, password) => {
         try {
@@ -27,7 +28,7 @@ export const AuthProvider = ({ children }) => {
         }
     }
     return (
-        <AuthContext.Provider value={{ signup, loading }}>
+        <AuthContext.Provider value={{ signed: !!user, signup, loading }}>
             {children}
         </AuthContext.Provider>
     )
