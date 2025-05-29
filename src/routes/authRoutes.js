@@ -9,7 +9,15 @@ const AuthRoutes = () => {
     return (
         <StackNavigator.Navigator>
             <StackNavigator.Screen name="SignIn" component={SignIn} />
-            <StackNavigator.Screen name="SignUp" component={SignUp} />
+            <StackNavigator.Screen name="SignUp" component={SignUp} options={{
+                headerStyle: {
+                    backgroundColor: '#3b3dbf',
+                    borderBottomWidth: 1,
+                    borderBottomColor: '#00b94a'
+                },
+                headerTintColor: '#fff',
+                headerBackTitle: 'Voltar',
+            }} />
         </StackNavigator.Navigator>
     )
 }
